@@ -1,0 +1,37 @@
+[
+    {
+        "empId": 4123413,
+        "name": "Zak Ruvalcaba",
+        "extension":3424,
+        "email": "zak@vectacorp.com",
+        "title": "Executive"
+    },
+    {
+        "empId": 23424665,
+        "name": "Sally Smith",
+        "extension":2344,
+        "email": "sally@vectacorp.com",
+        "title": "Administrative"
+    },
+    {
+        "empId": 12341244,
+        "name": "Mark Martin",
+        "extension":5352,
+        "email": "mark@vectacorp.com",
+        "title": "Sales"
+    },
+    {
+        "empId": 14545423,
+        "name": "Robin Banks",
+        "extension":7867,
+        "email": "robin@vectacorp.com",
+        "title": "Marketing"
+    },
+    {
+        "empId": 13413453,
+        "name": "Sue Wedge",
+        "extension":1235,
+        "email": "sue@vectacorp.com",
+        "title": "QA"
+    }
+]
