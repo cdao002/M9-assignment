@@ -15,7 +15,7 @@ empTable.addEventListener('click', (e) => {
             // REMOVE EMPLOYEE FROM ARRAY
             empTable.deleteRow(rowIndex)    
         }
-        localStorage.setItem('employees', JSON.stringify(empTable))
+        localStorage.setItem('employees', JSON.stringify(arrEmployees))
         
     }
 })
@@ -25,7 +25,7 @@ async function buildGrid() {
     const arrEmployees = await init();  // Fetch employee data
 
     if (arrEmployees.length === 0) {
-        empTable.innerHTML = '<tr><td colspan="6">No employees available.</td></tr>'
+        empTable.innerHTML = '<tr><td colspan="6">No employees available.</td></tr>';
         return;
     }
 
@@ -33,11 +33,11 @@ async function buildGrid() {
     empTable.lastElementChild.remove()
     // REBUILD THE TBODY FROM SCRATCH
     let tbody = document.createElement('tbody')
-  
+    // empTable.innerHTML = ''
     // LOOP THROUGH THE ARRAY OF EMPLOYEES
     // REBUILDING THE ROW STRUCTURE
     for (let employee of arrEmployees) {
-        let row = document.createElement('tr')
+        let row = document.createElement('tr');
         
         row.innerHTML = `
             <td>${employee.empId}</td>
