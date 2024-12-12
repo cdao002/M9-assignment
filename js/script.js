@@ -1,8 +1,10 @@
 import {init} from "./modules/init.js"
 
+
 // GET DOM ELEMENTS
 let empTable    = document.querySelector('#employees')
 let empCount    = document.querySelector('#empCount')
+let arrEmployees = []
 
 
 // DELETE EMPLOYEE
@@ -13,16 +15,19 @@ empTable.addEventListener('click', (e) => {
             // GET THE SELECTED ROWINDEX FOR THE TR (PARENTNODE.PARENTNODE)
             let rowIndex = e.target.parentNode.parentNode.rowIndex
             // REMOVE EMPLOYEE FROM ARRAY
-            empTable.deleteRow(rowIndex)    
+            arrEmployees.splice(rowIndex - 1, 1)   
+
         }
         localStorage.setItem('employees', JSON.stringify(arrEmployees))
+        // UPDATE EMPLOYEE COUNT
+        empCount.value = `(${arrEmployees.length})` 
         
     }
 })
 
 // BUILD THE EMPLOYEES GRID
 async function buildGrid() {
-    const arrEmployees = await init();  // Fetch employee data
+    arrEmployees = await init();  // Fetch employee data
 
     if (arrEmployees.length === 0) {
         empTable.innerHTML = '<tr><td colspan="6">No employees available.</td></tr>';
@@ -55,8 +60,6 @@ async function buildGrid() {
     // UPDATE EMPLOYEE COUNT
     empCount.value = `(${arrEmployees.length})`
 }
-
-
 
 // BUILD THE EMPLOYEES TABLE WHEN THE PAGE LOADS
 buildGrid()
