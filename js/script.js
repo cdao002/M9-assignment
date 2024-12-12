@@ -33,7 +33,7 @@ async function buildGrid() {
     empTable.lastElementChild.remove()
     // REBUILD THE TBODY FROM SCRATCH
     let tbody = document.createElement('tbody')
-    // empTable.innerHTML = ''
+  
     // LOOP THROUGH THE ARRAY OF EMPLOYEES
     // REBUILDING THE ROW STRUCTURE
     for (let employee of arrEmployees) {
